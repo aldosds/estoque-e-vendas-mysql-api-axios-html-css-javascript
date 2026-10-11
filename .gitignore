@@ -7,7 +7,7 @@ backend/.env
 
 # Bloqueia as dependências pesadas do Node (elas são baixadas via npm install)
 node_modules/
-backend/node_modules
+backend/node_modules/
 
 # Bloqueia arquivos temporários do sistema operacional Ubuntu
 .DS_Store
