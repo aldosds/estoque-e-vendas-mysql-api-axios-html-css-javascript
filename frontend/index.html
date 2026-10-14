@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Importação do Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.20.0/axios.min.js"></script> -->
+
+    <!-- Importação do Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <title>Sistema de Vendas e Estoque</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/produtos.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- 👤 MENSAGEM DE BOAS-VINDAS ADICIONADA -->
+      <div class="continer-boas-vindas">
+        <span id="mensagem-boas-vindas" class="mensagem-boas-vindas"></span>
+        <span id="badge-nivel" class="badge-nivel"></span>
+      </div>
+
+      <h1>Gerenciador de Estoque e Vendas</h1>
+
+      <div class="links-container">
+        <a href="index.html" class="link-produtos">📦 Produtos</a>
+        <a href="./vendas.html" class="link-vendas">💰 Histórico de Vendas</a>
+        <!-- Injetar este botão condicional ou fixo (o script já barra se for operador) -->
+        <a
+          href="./cadastro-usuarios.html"
+          id="menu-usuarios"
+          class="link-usuarios"
+          >👥 Novo Usuário</a
+        >
+        <!-- 🚪 BOTÃO DE LOGOUT -->
+        <button id="btn-logout" class="btn-logout">Sair 🚪</button>
+      </div>
+
+      <!-- Form de Cadastro: Captura de novos dados -->
+      <h2 id="titulo-form">Cadastrar Novo Produto</h2>
+      <form id="form-produto">
+        <!-- Campo invisível para guardar o ID na edição -->
+        <input type="hidden" id="produto-id" />
+
+        <div class="form-container">
+          <div class="form-group">
+            <label for="nome">Nome do Produto</label>
+            <input type="text" id="nome" placeholder="Ex: Headset" required />
+          </div>
+          <div class="form-group">
+            <label for="categoria">Categoria</label>
+            <select id="categoria">
+              <option value="Periferico">Periferico</option>
+              <option value="Video">Video</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="preco">Preço (R$)</label>
+            <input
+              type="number"
+              id="preco"
+              step="0.01"
+              min="0"
+              placeholder="0.00"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="estoque">Estoque</label>
+            <input
+              type="number"
+              id="estoque"
+              min="0"
+              placeholder="0"
+              required
+            />
+          </div>
+        </div>
+        <div class="btn-form-container">
+          <button type="submit" id="btn-submit" class="btn-cadastrar">
+            Adicionar Produto
+          </button>
+          <button
+            type="button"
+            id="btn-cancelar"
+            class="btn-cancelar"
+            onclick="cancelarEdicao()"
+          >
+            Cancelar
+          </button>
+        </div>
+      </form>
+
+      <!-- Cards de Resumo Gerencial -->
+      <div class="cards-container">
+        <div class="card premium">
+          <div class="card-titulo">⭐ Produto Mais Caro</div>
+          <div id="card-premium-conteudo" class="card-valor">
+            Nenhum produto
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-titulo">📦 Apenas Periféricos</div>
+          <div id="card-filtro-conteudo" class="card-valor">0 itens</div>
+        </div>
+      </div>
+
+      <!-- Área do Gráfico -->
+      <h2>Visão Geral do Estoque e Preços</h2>
+      <div class="grafico">
+        <canvas id="grafico-produtos"></canvas>
+      </div>
+
+      <!-- Campo de Busca por Digitação -->
+      <h2>Buscar Produtos</h2>
+      <div class="form-group busca-produto">
+        <input
+          type="text"
+          id="campo-busca"
+          class="campo-busca"
+          placeholder="Digite o nome do produto para filtrar..."
+        />
+      </div>
+
+      <!-- Tabela Estrutural Completa (HTML) -->
+      <h2>Lista de Produtos</h2>
+      <div class="tabela-container">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nome</th>
+              <th>Categoria</th>
+              <th>Preço</th>
+              <th>Estoque</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="linhas-produtos">
+            <!-- Injeção via JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Carrega a inteligência e interceptores centrais do sistema -->
+    <script src="./js/api.js"></script>
+
+    <!-- Carrega a lógica específica EXCLUSIVA desta página atual -->
+    <script src="./js/produtos.js"></script>
+  </body>
+</html>
