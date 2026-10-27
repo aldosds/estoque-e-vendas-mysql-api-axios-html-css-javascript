@@ -43,25 +43,25 @@ Aqui estão as capturas de tela do sistema rodando diretamente no navegador web:
 
 <!-- Substitua o link 'URL_DA_SUA_IMAGEM_AQUI' pelo caminho ou URL da imagem do seu login -->
 
-![Tela de Login](images/login.png)
+![Tela de Login](frontend/images/login.png)
 
 ### 2. Painel de Controle e Estoque de Produtos (Visão do Administrador)
 
 <!-- Substitua o link 'URL_DA_SUA_IMAGEM_AQUI' pelo caminho ou URL da imagem do painel principal -->
 
-![Painel de Produtos](images/produtos.png)
+![Painel de Produtos](frontend/images/produtos.png)
 
 ### 3. Histórico e Gráficos de Pizza de Auditoria de Vendas
 
 <!-- Substitua o link 'URL_DA_SUA_IMAGEM_AQUI' pelo caminho ou URL da imagem da tela de vendas -->
 
-![Histórico de Vendas](images/vendas.png)
+![Histórico de Vendas](frontend/images/vendas.png)
 
 ### 4. Interface Visual de Cadastro de Novos Funcionários
 
 <!-- Substitua o link 'URL_DA_SUA_IMAGEM_AQUI' pelo caminho ou URL da imagem da tela de novos usuários -->
 
-![Cadastro de Usuários](images/cadastro.png)
+![Cadastro de Usuários](frontend/images/cadastro.png)
 
 ---
 
