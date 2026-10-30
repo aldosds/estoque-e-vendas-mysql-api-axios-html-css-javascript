@@ -34,20 +34,12 @@ function renderizarPainelVendas(listaVendas = vendas) {
 
   tbody.innerHTML = listaVendas
     .map(
-      ({
-        id,
-        produto_nome,
-        quantidade,
-        preco_unitario,
-        valor_total,
-        data_venda,
-      }) => `
+      ({ id, produto_nome, quantidade, preco_unitario, data_venda }) => `
     <tr>
       <td>#${id}</td>
       <td><strong>${produto_nome}</strong></td>
       <td>${quantidade}</td>
       <td>R$ ${Number(preco_unitario).toFixed(2)}</td>
-      <td>R$ ${Number(valor_total).toFixed(2)}</td>
       <td>${new Date(data_venda).toLocaleString("pt-BR")}</td>
       <td>
         <button class="btn-excluir" onclick="estornarVenda(${id})">Excluir (Estornar)</button>
