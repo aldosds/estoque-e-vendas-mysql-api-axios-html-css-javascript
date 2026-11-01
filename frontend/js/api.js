@@ -1,9 +1,9 @@
-// 🛡️ VERIFICAÇÃO DE SESSÃO LOCAL ATIVA
-// Se o usuário não tiver token e tentar acessar páginas internas, é expulso na hora
-const paginaAtual = window.location.pathname;
-if (!localStorage.getItem("token") && !paginaAtual.includes("login.html")) {
-  window.location.href = "login.html";
-}
+// // 🛡️ VERIFICAÇÃO DE SESSÃO LOCAL ATIVA
+// // Se o usuário não tiver token e tentar acessar páginas internas, é expulso na hora
+// const paginaAtual = window.location.pathname;
+// if (!localStorage.getItem("token") && !paginaAtual.includes("login.html")) {
+//   window.location.href = "login.html";
+// }
 
 // Configuração da instância centralizada do Axios
 const api = axios.create({
