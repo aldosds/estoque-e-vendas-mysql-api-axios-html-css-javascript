@@ -7,7 +7,7 @@ if (!localStorage.getItem("token") && !paginaAtual.includes("login.html")) {
 
 // Configuração da instância centralizada do Axios
 const api = axios.create({
-  baseURL: "https://onrender.com",
+  baseURL: "https://estoque-e-vendas.onrender.com",
 });
 
 // INTERCEPTOR DE REQUISIÇÃO: Injeta o Token JWT em 100% dos fetches automáticos
