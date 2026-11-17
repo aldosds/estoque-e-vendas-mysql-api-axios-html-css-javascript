@@ -70,8 +70,8 @@ Aqui estão as capturas de tela do sistema rodando diretamente no navegador web:
 ### 1. Clonar o Repositório e Preparar as Pastas
 
 ```bash
-git clone https://github.com
-cd https://github.com/aldosds/estoque-e-vendas-mysql-api-axios-html-css-javascript.git
+git clone https://github.com/aldosds/estoque-e-vendas-mysql-api-axios-html-css-javascript.git
+cd estoque-e-vendas-mysql-api-axios-html-css-javascript
 ```
 
 ### 2. Configurar o Banco de Dados (MySQL)
