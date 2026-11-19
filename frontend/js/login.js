@@ -7,11 +7,14 @@ document
     const erroDiv = document.getElementById("erro");
 
     try {
+      // // Envia as credenciais para a nossa rota de Login do Node
+      // const resposta = await axios.post(
+      //   "https://estoque-e-vendas.onrender.com/api/auth/login",
+      //   { email, senha },
+      // );
+
       // Envia as credenciais para a nossa rota de Login do Node
-      const resposta = await axios.post(
-        "https://estoque-e-vendas.onrender.com/api/auth/login",
-        { email, senha },
-      );
+      const resposta = await api.post("/auth/login", { email, senha });
 
       // 💾 SALVAMENTO NO LOCALSTORAGE (Sessão do Usuário)
       // Guardamos o Token JWT e as informações de nível de acesso no navegador
