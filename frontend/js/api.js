@@ -5,9 +5,21 @@ if (!localStorage.getItem("token") && !paginaAtual.includes("login.html")) {
   window.location.href = "login.html";
 }
 
-// Configuração da instância centralizada do Axios
+// // Configuração da instância centralizada do Axios
+// const api = axios.create({
+//   baseURL: "https://estoque-e-vendas.onrender.com/api",
+// });
+
+// Detecta se o site está rodando localmente ou na internet e escolhe a API certa
+const URL_PRODUCAO = "https://estoque-e-vendas.onrender.com/api";
+const URL_LOCAL = "http://localhost:3000/api";
+
 const api = axios.create({
-  baseURL: "https://estoque-e-vendas.onrender.com/api",
+  baseURL:
+    window.location.hostname === "localhost" ||
+    window.location.hostname === "127.0.0.1"
+      ? URL_LOCAL
+      : URL_PRODUCAO,
 });
 
 // INTERCEPTOR DE REQUISIÇÃO: Injeta o Token JWT em 100% dos fetches automáticos
