@@ -5,11 +5,6 @@ if (!localStorage.getItem("token") && !paginaAtual.includes("login.html")) {
   window.location.href = "login.html";
 }
 
-// // Configuração da instância centralizada do Axios
-// const api = axios.create({
-//   baseURL: "https://estoque-e-vendas.onrender.com/api",
-// });
-
 // Detecta se o site está rodando localmente ou na internet e escolhe a API certa
 const URL_PRODUCAO = "https://estoque-e-vendas.onrender.com/api";
 const URL_LOCAL = "http://localhost:3000/api";
